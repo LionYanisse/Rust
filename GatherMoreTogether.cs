@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace Oxide.Plugins
 {
-    [Info("Gather More Together", "Owned", "1.0.0")]
+    [Info("Gather More Together", "Owned", "1.0.1")]
     [Description("Get more ressources when you're farming close to a team member")]
 
     class GatherMoreTogether : RustPlugin
@@ -53,7 +53,7 @@ namespace Oxide.Plugins
                           if(Vector3.Distance(basePlayer.transform.position, member.transform.position) <= config.distanceMate)
                           {
                             item.amount = item.amount + (item.amount * config.bonusMate/100);
-                            basePlayer.ChatMessage("You got 10% more because you're close to a member of your team");
+                            basePlayer.ChatMessage("You got "+config.bonusMate.ToString()+"% more because you're close to a member of your team");
                           }
                         }
                       }
